@@ -13,7 +13,7 @@ int main(){
 
     int n = 30;
 
-    std::cout << "The number at the " << n << "th position is " << fibonacci(n) << std::endl;
+    std::cout << "The number at the " << n << "th position is " << fibonacci(n) << " !" << std::endl;
 
     return 0;
 
