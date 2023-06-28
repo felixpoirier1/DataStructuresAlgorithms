@@ -1,0 +1,18 @@
+.vscode
+
+#ignore unix program files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+#remove all output files
+*.aux
+*.bbl
+*.blg
+*.log
+
+#ignore files that come from g++ compilation
+*.o
+*.out
+*.exe
+

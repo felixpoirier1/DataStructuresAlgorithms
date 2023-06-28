@@ -2,12 +2,10 @@
     "tasks": [
         {
             "type": "cppbuild",
-            "label": "C/C++: clang++ générer le fichier actif",
-            "command": "/opt/homebrew/bin/g++-13",
+            "label": "C/C++: g++ build active file",
+            "command": "/usr/bin/g++",
             "args": [
-                "-g",
-                "-Wall",
-                "-std=c++17",
+                "-fdiagnostics-color=always",
                 "${file}",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
@@ -22,7 +20,6 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "detail": "Tâche générée par le débogueur."
         }
     ],
     "version": "2.0.0"
