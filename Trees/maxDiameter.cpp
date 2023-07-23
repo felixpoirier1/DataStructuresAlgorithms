@@ -32,19 +32,11 @@ int treeDiameter(Node * root){
     if (root == NULL){
         return 0;
     }
-    int left_height = 0;
-    int right_height = 0;
-    if (root->right != NULL){
-        right_height = height(root->right);
-    }
-    if (root->left != NULL){
-        left_height = height(root->left);
-    }
 
-    int current_diameter = right_height + left_height;
-
-    int largest_diameter = max(current_diameter, treeDiameter(root->right));
-    largest_diameter = max(largest_diameter, treeDiameter(root->left));
+    int head_diameter = height(root->left) + height(root->right);
+    int left_diameter = treeDiameter(root->left);
+    int right_diameter = treeDiameter(root->right);
+    int largest_diameter = max(head_diameter, max(left_diameter, right_diameter));
     return largest_diameter;
 
 }
