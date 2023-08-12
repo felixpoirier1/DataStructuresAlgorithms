@@ -24,15 +24,12 @@
 
 int bu_coinchange(int m, int coins[], int l){
     int steps[m+1] = {};
-
+    steps[0] = 0;
     for(int i=0; i <= m; i++){
         steps[i] = UINT16_MAX;
         for(int j=0; j < l; j++){
-            if ((i - coins[j]) > 0){
+            if ((i - coins[j]) >= 0){
                 steps[i] = std::min(steps[i], steps[i-coins[j]] + 1);
-            }
-            else if (i == coins[j]){
-                steps[i] = 1;
             }
         }
     }
@@ -42,7 +39,7 @@ int bu_coinchange(int m, int coins[], int l){
 
 
 int main(){
-    int m = 4312;
+    int m = 431212;
     int coins[4] = {15, 13, 17, 11};
 
     //std::cout << td_coinchange(m, coins, 4) << std::endl;
