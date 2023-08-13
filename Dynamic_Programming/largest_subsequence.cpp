@@ -18,9 +18,7 @@ std::vector<int> find_largest_subsequence(std::vector<int> arr){
 
         for(int j = i - 1; j >= 0; j--){
             if (arr[i] >= arr[j]){
-                if(dp[i] > dp[j] + 1){
-                    dp[i] = dp[i];
-                } else {
+                if(dp[i] <= dp[j] + 1){
                     dp[i] = dp[j] + 1;
                     largest_subsequence[i] = largest_subsequence[j];
                     largest_subsequence[i].push_back(arr[i]);
